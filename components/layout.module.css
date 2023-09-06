@@ -1,7 +1,7 @@
 .container {
-  max-width: 36rem;
+  /* max-width: 36rem; */
   padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  margin: 0rem 16rem 6rem;
 }
 
 .header {
@@ -12,4 +12,37 @@
 
 .backToHome {
   margin: 3rem 0 0;
+}
+
+.headerContainer {
+  /* background-color: aquamarine; */
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.headerInner {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin: 0 4rem;
+  position: relative;
+}
+
+.headerLogo {
+  flex-grow: 1;
+  color: #45583e;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.headerMenu {
+  display: table;
+}
+
+.headerMenuItem {
+  padding: 0 6px;
+  border-left: 1px solid #d9d9d9;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
 }
