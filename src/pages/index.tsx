@@ -5,12 +5,17 @@ import {
   Tab,
   TabPanel,
   ChakraProvider,
+  Box,
+  Button,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../../components/layout";
 import utilStyles from "../../styles/utils.module.css";
 import { getSortedPostsData } from "../../lib/posts";
+import { useState } from "react";
+import Contents from "../../components/contents";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -22,6 +27,15 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
+  const [count, setCount] = useState(10);
+
+  const handleUp = () => {
+    console.log("カウントアップするよ");
+    setCount(count + 1);
+  };
+
+  const [isLargerThan980] = useMediaQuery("(min-width: 980px)");
+
   return (
     <Layout isHome>
       <ChakraProvider>
@@ -29,38 +43,80 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
           <title>{siteTitle}</title>
         </Head>
 
-        <section className={utilStyles.headingMd}></section>
-
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Blog</h2>
-          <ul className={utilStyles.list}>
-            {allPostsData.map(({ id, date, title }) => (
-              <li className={utilStyles.listItem} key={id}>
-                {title}
-                <br />
-                {id}
-                <br />
-                {date}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* <h1>攻略サイト</h1>
-        <Tabs variant="soft-rounded" colorScheme="green">
-          <TabList>
-            <Tab>Tab 1</Tab>
-            <Tab>Tab 2</Tab>
+        <Tabs>
+          <TabList display="flex">
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 1
+              </Box>
+            </Tab>
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 2
+              </Box>
+            </Tab>
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 3
+              </Box>
+            </Tab>
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 4
+              </Box>
+            </Tab>
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 5
+              </Box>
+            </Tab>
+            <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
+              <Box
+                width="100%"
+                m={"4px 0px"}
+                borderRight={"solid 1.5px"}
+                borderColor={"gainsboro"}
+              >
+                Tab 6
+              </Box>
+            </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>
-              <p>one!</p>
+            <TabPanel mt={"1rem"} p={0}>
+              <Contents />
             </TabPanel>
             <TabPanel>
               <p>two!</p>
             </TabPanel>
           </TabPanels>
-        </Tabs> */}
+        </Tabs>
+
+        {/* <Contents /> */}
       </ChakraProvider>
     </Layout>
   );

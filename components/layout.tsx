@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Navber from "./navber";
 
 import {
   Breadcrumb,
@@ -22,7 +23,8 @@ export default function Layout({
   isHome: boolean;
 }) {
   return (
-    <>
+    <div className={styles.layoutContainer}>
+      {/* ヘッダー */}
       <header>
         <div className={styles.headerContainer}>
           <div className={styles.headerInner}>
@@ -36,6 +38,8 @@ export default function Layout({
           </div>
         </div>
       </header>
+
+
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -57,7 +61,7 @@ export default function Layout({
             <>
               <Image
                 priority
-                src="/images/snowbreak_top.png"
+                src="/images/snowbreak_top_trim.jpg"
                 // className={utilStyles.borderCircle}
                 height={0}
                 width={0}
@@ -65,14 +69,14 @@ export default function Layout({
                 style={{ width: "100%" }}
                 alt={name}
               />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
+              {/* <Navber /> */}
             </>
           ) : (
             <>
               <Link href="/">
                 <Image
                   priority
-                  src="/images/Mottle_slime.jpeg"
+                  src="/images/snowbreak_top_trim.jpg"
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
@@ -92,6 +96,6 @@ export default function Layout({
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }

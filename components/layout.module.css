@@ -1,3 +1,7 @@
+.layoutContainer {
+  background-color: whitesmoke;
+}
+
 .container {
   /* max-width: 36rem; */
   padding: 0 1rem;
@@ -15,7 +19,7 @@
 }
 
 .headerContainer {
-  /* background-color: aquamarine; */
+  background-color: white;
   border-top: 1px solid #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -31,6 +35,7 @@
 .headerLogo {
   flex-grow: 1;
   color: #45583e;
+  color: #bdc8b8;
   font-size: 26px;
   font-weight: 800;
 }
