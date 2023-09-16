@@ -5,19 +5,22 @@
 }
 
 .headerInner {
+  max-width: 1000px;
   align-items: center;
   display: flex;
   height: 100%;
-  margin: 0 4rem;
+  margin: 0 auto;
+  padding: 0 1rem;
   position: relative;
 }
 
 .headerLogo {
   flex-grow: 1;
+  display: flex;
   color: #45583e;
-  /* color: #bdc8b8; */
   font-size: 26px;
   font-weight: 800;
+  padding: 4px 0px;
 }
 
 .headerMenu {

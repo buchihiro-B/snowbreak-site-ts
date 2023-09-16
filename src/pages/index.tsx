@@ -17,8 +17,6 @@ import Layout from "../../components/layout";
 import Contents from "../../components/contents";
 
 export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
-  const [isLargerThan980] = useMediaQuery("(min-width: 980px)");
-
   return (
     <ChakraProvider>
       <Layout siteTitle="top page">
@@ -32,6 +30,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 攻略TOP
               </Box>
@@ -44,6 +43,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 キャラ一覧
               </Box>
@@ -56,6 +56,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 武器一覧
               </Box>
@@ -68,6 +69,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 後方支援一覧
               </Box>
@@ -80,6 +82,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 最強キャラ
               </Box>
@@ -92,6 +95,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderColor={"gainsboro"}
                 fontWeight={"bold"}
                 fontSize={"12px"}
+                p={"6px 0px"}
               >
                 序盤の進め方
               </Box>

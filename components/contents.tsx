@@ -1,11 +1,11 @@
 import { Box, useMediaQuery, Flex } from "@chakra-ui/react";
 
 export default function Contents() {
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+  const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
 
   return (
     <>
-      {isLargerThan800 ? (
+      {isLargerThan1000 ? (
         <Flex>
           <Box
             backgroundColor={"white"}

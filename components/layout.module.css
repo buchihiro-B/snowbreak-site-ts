@@ -5,7 +5,7 @@
 
 .container {
   padding: 0 1rem;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0rem auto 6rem;
 }
 
@@ -36,7 +36,6 @@
 .headerLogo {
   flex-grow: 1;
   color: #45583e;
-  color: #bdc8b8;
   font-size: 26px;
   font-weight: 800;
 }
