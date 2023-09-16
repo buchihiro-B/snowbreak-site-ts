@@ -1,26 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
-import Navber from "./navber";
-
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from "@chakra-ui/react";
-
-const name = "Your Name";
-export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({
   children,
-  isHome,
+  siteTitle,
 }: {
   children: React.ReactNode;
-  isHome: boolean;
+  siteTitle: string;
 }) {
   return (
     <div className={styles.layoutContainer}>
@@ -39,7 +26,6 @@ export default function Layout({
         </div>
       </header>
 
-
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
@@ -55,46 +41,24 @@ export default function Layout({
           />
           <meta name="og:title" content={siteTitle} />
           <meta name="twitter:card" content="summary_large_image" />
+          <title>{siteTitle}</title>
         </Head>
         <div className={styles.header}>
-          {isHome ? (
-            <>
-              <Image
-                priority
-                src="/images/snowbreak_top_trim.jpg"
-                // className={utilStyles.borderCircle}
-                height={0}
-                width={0}
-                sizes="100vw"
-                style={{ width: "100%" }}
-                alt={name}
-              />
-              {/* <Navber /> */}
-            </>
-          ) : (
-            <>
-              <Link href="/">
-                <Image
-                  priority
-                  src="/images/snowbreak_top_trim.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </Link>
-              <h2 className={utilStyles.headingLg}>
-                <Link href="/">{name}</Link>
-              </h2>
-            </>
-          )}
+          <>
+            <Image
+              priority
+              src="/images/snowbreak_top_trim.jpg"
+              // className={utilStyles.borderCircle}
+              height={0}
+              width={0}
+              sizes="100vw"
+              style={{ width: "100%" }}
+              alt="no image"
+            />
+            {/* <Navber /> */}
+          </>
         </div>
         <main>{children}</main>
-        {!isHome && (
-          <div className={styles.backToisHome}>
-            <Link href="/">← Back to isHome</Link>
-          </div>
-        )}
       </div>
     </div>
   );

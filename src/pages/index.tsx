@@ -8,14 +8,21 @@ import {
   Box,
   Button,
   useMediaQuery,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  
 } from "@chakra-ui/react";
-import Head from "next/head";
-import Link from "next/link";
-import Layout, { siteTitle } from "../../components/layout";
-import utilStyles from "../../styles/utils.module.css";
+import {ChevronRightIcon, } from '@chakra-ui/icons'
+import Layout from "../../components/layout";
 import { getSortedPostsData } from "../../lib/posts";
 import { useState } from "react";
 import Contents from "../../components/contents";
+import customTheme from "../customTheme";
+
+import "@fontsource/raleway/400.css";
+import "@fontsource/open-sans/700.css";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -27,22 +34,12 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
-  const [count, setCount] = useState(10);
-
-  const handleUp = () => {
-    console.log("カウントアップするよ");
-    setCount(count + 1);
-  };
 
   const [isLargerThan980] = useMediaQuery("(min-width: 980px)");
 
   return (
-    <Layout isHome>
-      <ChakraProvider>
-        <Head>
-          <title>{siteTitle}</title>
-        </Head>
-
+    <Layout siteTitle="top page">
+      <ChakraProvider theme={customTheme}>
         <Tabs>
           <TabList display="flex">
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -52,7 +49,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 1
+                TOP
               </Box>
             </Tab>
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -62,7 +59,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 2
+                キャラ一覧
               </Box>
             </Tab>
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -72,7 +69,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 3
+                武器一覧
               </Box>
             </Tab>
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -82,7 +79,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 4
+                後方支援一覧
               </Box>
             </Tab>
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -92,7 +89,7 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 5
+                最強キャラ
               </Box>
             </Tab>
             <Tab flex="1" color={"#45583e"} bg={"white"} p={0}>
@@ -102,16 +99,47 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
                 borderRight={"solid 1.5px"}
                 borderColor={"gainsboro"}
               >
-                Tab 6
+                序盤の進め方
               </Box>
             </Tab>
           </TabList>
+
+          <Breadcrumb
+            spacing="8px"
+            separator={<ChevronRightIcon color="gray.500" />}
+            m={"6px 0px"}
+          >
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">About</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage>
+              <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+
           <TabPanels>
-            <TabPanel mt={"1rem"} p={0}>
+            <TabPanel p={0}>
               <Contents />
             </TabPanel>
-            <TabPanel>
-              <p>two!</p>
+            <TabPanel p={0}>
+              <Contents />
+            </TabPanel>
+            <TabPanel p={0}>
+              <Contents />
+            </TabPanel>
+            <TabPanel p={0}>
+              <Contents />
+            </TabPanel>
+            <TabPanel p={0}>
+              <Contents />
+            </TabPanel>
+            <TabPanel p={0}>
+              <Contents />
             </TabPanel>
           </TabPanels>
         </Tabs>

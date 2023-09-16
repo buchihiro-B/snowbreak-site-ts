@@ -10,14 +10,18 @@ import {
   Button,
   useMediaQuery,
   Flex,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
 } from "@chakra-ui/react";
 
 export default function Contents() {
-  const [isLargerThan980] = useMediaQuery("(min-width: 980px)");
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
   return (
     <>
-      {isLargerThan980 ? (
+      {isLargerThan800 ? (
         <Flex>
           <Box
             backgroundColor={"white"}
@@ -39,8 +43,23 @@ export default function Contents() {
         </Flex>
       ) : (
         <Box>
-          <Box backgroundColor={"gray"}>test</Box>
-          <Box backgroundColor={"red"}>test2</Box>
+          <Box
+            backgroundColor={"white"}
+            p={2}
+            mb={"1rem"}
+            h={700}
+            width={"100%"}
+          >
+            メインコンテンツ
+          </Box>
+          <Box
+            backgroundColor={"white"}
+            p={2}
+            h={700}
+            width={"100%"}
+          >
+            サブコンテンツ
+          </Box>
         </Box>
       )}
     </>
