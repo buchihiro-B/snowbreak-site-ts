@@ -1,24 +1,3 @@
-.layoutContainer {
-  background-color: whitesmoke;
-  font-family: RocknRollOne-Regular;
-}
-
-.container {
-  padding: 0 1rem;
-  max-width: 800px;
-  margin: 0rem auto 6rem;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.backToHome {
-  margin: 3rem 0 0;
-}
-
 .headerContainer {
   background-color: white;
   border-top: 1px solid #d9d9d9;
@@ -36,7 +15,7 @@
 .headerLogo {
   flex-grow: 1;
   color: #45583e;
-  color: #bdc8b8;
+  /* color: #bdc8b8; */
   font-size: 26px;
   font-weight: 800;
 }

@@ -1,20 +1,4 @@
-import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  ChakraProvider,
-  Box,
-  Text,
-  Button,
-  useMediaQuery,
-  Flex,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-} from "@chakra-ui/react";
+import { Box, useMediaQuery, Flex } from "@chakra-ui/react";
 
 export default function Contents() {
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
@@ -32,12 +16,7 @@ export default function Contents() {
           >
             メインコンテンツ
           </Box>
-          <Box
-            backgroundColor={"white"}
-            p={2}
-            h={700}
-            width={"30%"}
-          >
+          <Box backgroundColor={"white"} p={2} h={700} width={"30%"}>
             サブコンテンツ
           </Box>
         </Flex>
@@ -52,12 +31,7 @@ export default function Contents() {
           >
             メインコンテンツ
           </Box>
-          <Box
-            backgroundColor={"white"}
-            p={2}
-            h={700}
-            width={"100%"}
-          >
+          <Box backgroundColor={"white"} p={2} h={700} width={"100%"}>
             サブコンテンツ
           </Box>
         </Box>
