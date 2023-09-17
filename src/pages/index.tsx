@@ -109,7 +109,13 @@ export default function Home({ allPostsData }: { allPostsData: Array<any> }) {
             fontSize={"10px"}
           >
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">攻略TOP</BreadcrumbLink>
+              <BreadcrumbLink
+                href="#"
+                _focus={{ textDecoration: "none", color: "#749468" }}
+                _hover={{ textDecoration: "none", color: "#749468" }}
+              >
+                攻略TOP
+              </BreadcrumbLink>
             </BreadcrumbItem>
 
             {/* <BreadcrumbItem>

@@ -1,53 +1,17 @@
 .layoutContainer {
   background-color: whitesmoke;
-  font-family: RocknRollOne-Regular;
+  color: #45583e;
+  /* font-family: RocknRollOne-Regular; */
 }
 
 .container {
   padding: 0 1rem;
   max-width: 1000px;
-  margin: 0rem auto 6rem;
+  margin: 0rem auto 0rem;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.backToHome {
-  margin: 3rem 0 0;
-}
-
-.headerContainer {
-  background-color: white;
-  border-top: 1px solid #d9d9d9;
-  border-bottom: 1px solid #d9d9d9;
-}
-
-.headerInner {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  margin: 0 4rem;
-  position: relative;
-}
-
-.headerLogo {
-  flex-grow: 1;
-  color: #45583e;
-  font-size: 26px;
-  font-weight: 800;
-}
-
-.headerMenu {
-  display: table;
-}
-
-.headerMenuItem {
-  padding: 0 6px;
-  border-left: 1px solid #d9d9d9;
-  display: table-cell;
-  position: relative;
-  vertical-align: middle;
 }

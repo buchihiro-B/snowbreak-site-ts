@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "./layout.module.css";
 import Header from "./header";
+import Footer from "./footer";
 
 export default function Layout({
   children,
@@ -51,6 +52,9 @@ export default function Layout({
           </div>
           <main>{children}</main>
         </div>
+
+        {/* フッター */}
+        <Footer />
       </div>
     </>
   );
