@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "./layout.module.css";
+import styles from "./css_modules/layout.module.css";
 import Header from "./header";
 import Footer from "./footer";
+
+import React, { useState } from "react";
 
 export default function Layout({
   children,
@@ -11,6 +13,13 @@ export default function Layout({
   children: React.ReactNode;
   siteTitle: string;
 }) {
+  // ハンバーガーメニュー
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <Head>

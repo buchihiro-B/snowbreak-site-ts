@@ -1,3 +1,5 @@
+import HamburgerMenu from "./hamburgerMenu";
+
 import { Box, useMediaQuery, Flex } from "@chakra-ui/react";
 
 export default function Contents() {

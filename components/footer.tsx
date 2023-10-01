@@ -7,7 +7,7 @@ import {
   OrderedList,
   UnorderedList,
 } from "@chakra-ui/react";
-import styles from "./footer.module.css";
+import styles from "./css_modules/footer.module.css";
 
 export default function Footer() {
   return (
